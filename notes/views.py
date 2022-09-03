@@ -1,39 +1,21 @@
-from django import forms
-from django import http
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User 
+from .forms import UserCreationForm
+from django.contrib import messages
 # Create your views here.
 
 
-# def login(request):
-#     if request.method == 'POST':
-#          form = LoginForm(request.POST) 
-#          form_data = request.POST
-#          username = form_data.get('username')
-#          password1 = form_data.get('password1')
-#          fname = form_data.get('fname')
-#          lname = form.data.get('lname')
-
-#          user = User(username = username, password = password1, fname = fname, lname = lname)
-#          user.save()
-#          return redirect('/admin')
-
-#         #  print(form.is_valid())
-#         #  if form.is_valid():  
-#         #     form.save() 
-#         #     return HttpResponse('Valid Credentials')
-            
-
-#     form = LoginForm()
-#     context = {  
-#                 'form':form  
-#               }  
-#     return render(request, 'notes/login.html', context)
-
-def index(request):
-    return render(request, 'notes/main.html')
-
 def testpage(request):
-    return HttpResponse("You Made it!!!!!!!! :)")
+    return render(request, 'notes/testpage.html')
+
+def signup(request):
+    if request.method == 'POST':
+        form  = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username =  form.cleaned_data.get('username')
+            messages.success(request, f'Account Created for {username}')
+            return redirect('testpage')
+    else:
+        form  = UserCreationForm()
+    return render(request, 'notes/signup.html' , {'form': form})
