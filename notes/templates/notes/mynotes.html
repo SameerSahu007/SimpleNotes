@@ -1,7 +1,17 @@
 {% extends 'notes/index.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
 
-<h1>Congrats You Made it!!!!!! 🎊</h1>
+<div class="column is-one-third">
+    <form action="post">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <button type="submit">Save</button>
+    </form>
+
+</div>
+
 {% endblock %}
