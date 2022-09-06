@@ -1,13 +1,13 @@
 {% extends 'notes/index.html' %}
-{% load crispy_forms_tags %}  
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div>
-    <form method ="POST">
+    <form method="post" action="">
         {% csrf_token %}
 
         {{ form|crispy }}
-        <button>Submit</button>
+        <button type="submit">Submit</button>
     </form>
 </div>
 

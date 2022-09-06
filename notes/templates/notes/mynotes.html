@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="column is-one-third">
-    <form action="post">
+    <form method="post" action="">
         {% csrf_token %}
 
         {{ form|crispy }}
@@ -12,6 +12,16 @@
         <button type="submit">Save</button>
     </form>
 
+
+</div>
+<div>
+    {% if posts %}
+    {% for post in posts %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.description }}</p>
+    {% endfor %}
+    {% endif %}
+    
 </div>
 
 {% endblock %}
