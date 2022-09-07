@@ -23,9 +23,6 @@ def mynotes(request):
     form = PostForm()
     current_user =  User.objects.get(username = request.user.username)
     allposts =  Post.objects.filter(user = current_user )
-    print(list(allposts))
-
-
 
     return render(request, 'notes/mynotes.html',
                   {
@@ -46,3 +43,10 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'notes/signup.html', {'form': form})
+
+@login_required
+def delete(request, id):
+    print(id)
+    current_user =  User.objects.get(username = request.user.username)
+    Post.objects.filter(user = current_user, id = id).delete()
+    return redirect('/')
