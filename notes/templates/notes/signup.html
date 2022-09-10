@@ -2,12 +2,15 @@
 {% load crispy_forms_tags %}  
 {% block content %}
 
-<div>
+<div class=" h-100 d-flex align-items-center justify-content-center myforms">
     <form method ="POST">
+        <div class="form-group">
         {% csrf_token %}
 
         {{ form|crispy }}
-        <button>Submit</button>
+        </div>
+        <button  class="btn btn-light my-3" >Submit</button>
+        <p>Already have a account? <a href=" {% url 'login' %} " class="link-light"> Sign Up</a></p>
     </form>
 </div>
 
