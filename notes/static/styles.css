@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(82 82 82) 100%);
+    height: 100%
+}
+
+#div_id_username, #div_id_username {
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+
+#div_id_username {
+    margin-bottom: 15px;
+}
+
+.myforms {
+    margin-top: 150px;
+}
+
+.signupform{
+    margin-top: 40px;
+    padding: 10px;
+    /* width : 70px */
+}
+
+.signupform2{
+    max-width: 400px;
+    min-width: 200px;
+}
+
+.submit-btn{
+    color: red;
+    text-decoration: none;
+}
+
+.message{
+    justify-content: center;
+    text-align: center;
+    color : #b7b7ff;
+    margin-top: 14px;
+}
+
+.mynavbar {
+    color: #b7b7ff;
+    margin-left: 70px;
+}
+
+.mynavbar :hover {
+    color : white
+}
+
+.topnav {
+    overflow: hidden;
+    justify-content: space-between;
+    margin-left : 30%
+}
+
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: red;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}

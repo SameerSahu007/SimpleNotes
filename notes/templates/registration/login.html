@@ -4,6 +4,7 @@
 
 <div class="mt-xl h-100 d-flex align-items-center justify-content-center myforms" >
     <form method="post" action="">
+        <h1>Login :)</h1>
         <div class="form-group">
         {% csrf_token %}
 
@@ -13,7 +14,7 @@
         <button type="submit" class="btn btn-light my-3 ">Submit</button>
 
 
-        <p>Dont have a account? <a href=" {% url 'signup' %} " class="link-light"> Sign Up</a></p>
+        <p>Dont have a account? <a href=" {% url 'signup' %} " class="submit-btn" > Sign Up</a></p>
     </form>
     
 </div>
