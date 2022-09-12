@@ -2,27 +2,29 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="inner-container">
-    <div class="column is-one-third">
-        <form method="post" action="">
-            {% csrf_token %}
-    
-            {{ form|crispy }}
-    
-            <button type="submit">Save</button>
+
+<h1 class="myheading">Welcome to SimpleNotes!!!</h1>
+<div class="inner-container notesform">
+    <div class="column is-one-third >
+        <form method ="POST"  action="" class="">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <button type="submit" class="btn btn-light my-3 ">Save</button>
         </form>
-    
-    
+
+
     </div>
     <div>
         {% if posts %}
         {% for post in posts %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.description }}</p>
-        <a href = "delete/{{post.id}}">delete</a>
+        <a href="delete/{{post.id}}">delete</a>
         {% endfor %}
         {% endif %}
-        
+
     </div>
 </div>
 

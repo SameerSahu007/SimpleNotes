@@ -11,7 +11,7 @@ class PostForm(forms.ModelForm):
                 "class": "textarea is-success is-medium",
             }
         ),
-        label="",
+        label="Title",
     )
     description = forms.CharField(
         required= True,
