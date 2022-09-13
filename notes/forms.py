@@ -8,17 +8,21 @@ class PostForm(forms.ModelForm):
         widget=forms.widgets.TextInput(
             attrs={
                 "placeholder": "Title",
-                "class": "textarea is-success is-medium",
+                "class": "textarea is-success is-medium postitle",
             }
         ),
         label="Title",
     )
     description = forms.CharField(
-        required= True,
-        widget=forms.Textarea
-        
+        required=True,
+        widget=forms.Textarea(
+            attrs={
+                "placeholder": "Description",
+                "class": "textarea is-success is-medium postdes",
+            }
+        )
     )
 
     class Meta:
         model = Post
-        exclude = ("user","username", )
+        exclude = ("user", "username", )

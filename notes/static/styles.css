@@ -7,13 +7,17 @@ body {
 }
 
 #div_id_username, #div_id_username {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding: 5px;
 }
 
 
 #div_id_username {
     margin-bottom: 15px;
+}
+
+.asteriskField{
+    margin-top: 20px;
 }
 
 .myforms {
@@ -92,3 +96,41 @@ body {
     margin: 10px 0px;
 }
 
+.delete-button{
+    text-decoration: none;
+    color: red;
+}
+
+.postitle{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.postdes{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.mysavebutton{
+    margin-bottom: 15px;
+    justify-content: center;
+    padding: 10px 20px;
+    color: #202020;
+    background-color: #ffffff;
+}
+
+.allposts{
+    margin-top :10px
+}
+
+.allposts h1 {
+    text-align: center;
+}
+
+.postbutton{
+    text-align: center;
+}
+
+.mysavebutton :hover {
+    color:blue;
+}

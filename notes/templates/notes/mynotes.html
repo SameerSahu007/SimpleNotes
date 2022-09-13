@@ -5,23 +5,26 @@
 
 <h1 class="myheading">Welcome to SimpleNotes!!!</h1>
 <div class="inner-container notesform">
-    <div class="column is-one-third >
-        <form method ="POST"  action="" class="">
-        {% csrf_token %}
+    <div class="column is-one-third">
+        <form method="post" action="" class="">
+            {% csrf_token %}
 
-        {{ form|crispy }}
-
-        <button type="submit" class="btn btn-light my-3 ">Save</button>
+            {{ form|crispy }}
+            <div class="postbutton">
+                <button type="submit" class="btn btn-light my-3 mysavebutton">Save</button>
+            </div>
+            
         </form>
 
 
     </div>
-    <div>
+    <div class="allposts">
         {% if posts %}
         {% for post in posts %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.description }}</p>
-        <a href="delete/{{post.id}}">delete</a>
+        <a href="delete/{{post.id}}" class="delete-button">Delete</a>
+        <hr>
         {% endfor %}
         {% endif %}
 

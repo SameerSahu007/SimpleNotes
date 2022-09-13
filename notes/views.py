@@ -1,5 +1,4 @@
-from collections import UserString
-from traceback import print_tb
+import re
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from .forms import PostForm
@@ -7,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .models import Post
+from django.contrib.auth import logout
 # Create your views here.
 
 
@@ -21,8 +21,8 @@ def mynotes(request):
             return redirect('/')
 
     form = PostForm()
-    current_user =  User.objects.get(username = request.user.username)
-    allposts =  Post.objects.filter(user = current_user )
+    current_user = User.objects.get(username=request.user.username)
+    allposts = Post.objects.filter(user=current_user)
 
     return render(request, 'notes/mynotes.html',
                   {
@@ -44,9 +44,15 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'notes/signup.html', {'form': form})
 
+
 @login_required
 def delete(request, id):
     print(id)
-    current_user =  User.objects.get(username = request.user.username)
-    Post.objects.filter(user = current_user, id = id).delete()
+    current_user = User.objects.get(username=request.user.username)
+    Post.objects.filter(user=current_user, id=id).delete()
     return redirect('/')
+
+
+# def logout_view(request):
+#     logout(request)
+#     return redirect('login')
