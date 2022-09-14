@@ -1,2 +1,2 @@
 # SimpleNotes
-A Note Taking app made using Django(Ongoing)
+A simple mote taking web app created using django
