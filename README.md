@@ -2,6 +2,18 @@
 A simple mote taking web app created using django
 
 
+## App ⚔
+
+
+
+
+https://user-images.githubusercontent.com/29480670/190432960-be8dd793-de87-460c-90be-519b918a3867.mp4
+
+
+
+
+
+
 ## Setup 👷
 
 1. Clone the repo
@@ -21,4 +33,6 @@ A simple mote taking web app created using django
    ```bash
    pip install -r requirements.txt
    ```
-![output](https://user-images.githubusercontent.com/29480670/190231603-eaab9b5c-8111-448b-8238-709cc66f59dc.gif)
+   
+   
+
